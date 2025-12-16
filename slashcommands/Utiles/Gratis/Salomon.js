@@ -20,8 +20,8 @@ module.exports = {
             "Puede ser",
             "Definitivamente",
             "No hay chance",
-            "Por supuesto",
-            "Obvio"
+            "Por su pollo",
+            "Obvio bobis"
         ];
 
         const botrespuestas = respuestas[Math.floor(Math.random() * respuestas.length)];
