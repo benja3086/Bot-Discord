@@ -23,6 +23,7 @@ Jeremías 1:5`,
 1 Timoteo 4:12`,
       `Mis planes para ustedes solamente yo los sé, y no son para su mal, sino para su bien. Voy a darles un futuro lleno de bienestar.
 Jeremías 29:11`,
+
     ];
 
     // Seleccionar un versículo aleatoriamente

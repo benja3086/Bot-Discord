@@ -2,7 +2,7 @@ const { EmbedBuilder, SlashCommandBuilder } = require("discord.js");
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName("8ball")
+        .setName("salomon")
         .setDescription("Responde a una pregunta con una respuesta aleatoria")
         .addStringOption(option =>
             option

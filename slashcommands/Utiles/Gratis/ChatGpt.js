@@ -1,5 +1,7 @@
 const { OpenAI } = require("openai");
 require("dotenv").config();
+const fs = require("fs");
+const path = require("path");
 
 const endpoint = process.env.TOKEN_EDNPOINT;
 const deployment_name = process.env.AZURE_OPENAI_DEPLOYMENT;
@@ -11,11 +13,14 @@ const client = new OpenAI({
 });
 
 async function main(pregunta) {
+  const promptFilePath = path.join(__dirname, "prompt.txt");
+  const prompt = fs.readFileSync(promptFilePath, "utf8");
+
   const completion = await client.chat.completions.create({
     messages: [
       {
         role: "developer",
-        content: "Eres un assistente de un grupo de jovenes responde con amor.",
+        content: prompt,
       },
       { role: "user", content: pregunta },
     ],

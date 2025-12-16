@@ -3,7 +3,7 @@ const { main } = require("./ChatGpt");
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName("habla-conmigo")
+    .setName("giro-bot")
     .setDescription("Responde a una pregunta")
     .addStringOption(option =>
       option
@@ -13,14 +13,18 @@ module.exports = {
     ),
 
   async execute(interaction) {
+  await interaction.deferReply(); 
+
+
     const pgr = interaction.options.getString("pregunta");
 
     const respuesta = await main(pgr);
 
     const embed = new EmbedBuilder()
-      .setColor("Green")
-      .setDescription(respuesta);
-
-    await interaction.reply({ embeds: [embed] });
+      .setColor("Orange")
+      .setDescription(
+      `\n${pgr}\n\n${respuesta}`
+    );
+    await interaction.editReply({ embeds: [embed] });
   }
 };
