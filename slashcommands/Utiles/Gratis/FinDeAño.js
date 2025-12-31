@@ -6,7 +6,7 @@ module.exports = {
     .setDescription("mensaje de fin de año"),
 
   async execute(interaction) {
-    const canal = await interaction.client.channels.fetch("<696454154410917901>", "<548345577276964864>");
+    const canal = await interaction.client.channels.fetch("696454154410917901", "548345577276964864");
     if (!canal) return;
 
     const mensaje =
