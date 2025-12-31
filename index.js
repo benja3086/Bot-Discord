@@ -1,7 +1,7 @@
 require("dotenv").config();
 const fs = require("fs");
 const path = require("path");
-const { Client, GatewayIntentBits, Collection, EmbedBuilder } = require("discord.js");
+const { Client, GatewayIntentBits, Collection, EmbedBuilder, Events } = require("discord.js");
 const cron = require("node-cron");
 
 const client = new Client({
@@ -35,7 +35,7 @@ client.on("interactionCreate", async (interaction) => {
   }
 });
 
-client.once("ready", () => {
+client.once(Events.ClientReady, (client) => {
   console.log(`Bot listo como ${client.user.tag}`);
 
   cron.schedule("0 0 12 * * *", async () => {
