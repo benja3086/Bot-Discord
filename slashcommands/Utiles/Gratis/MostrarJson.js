@@ -13,7 +13,7 @@ module.exports = {
 
     if (interaction.user.id !== "577680569685770241") {
       return interaction.reply({
-        content: "❌ No tenés permiso para usar este comando.",
+        content: "❌ no podes usar este comando, este mismo solo lo puede usar el desarrollador hermoso que me programo.",
         ephemeral: true
       });
     }
